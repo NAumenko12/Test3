@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test3.ImagePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DodgerBlue">
+            
+            <Button Text="Загрузите фото" Clicked = "Button_Clicked" CornerRadius="35" HorizontalOptions="Center" TextColor="Black" BackgroundColor="White"/>
+            <Image x:Name="imgFile" WidthRequest="200" HeightRequest="200"></Image>
+
+            <Label x:Name="fileName" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+            <ListView x:Name="photosListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" HeightRequest="100" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

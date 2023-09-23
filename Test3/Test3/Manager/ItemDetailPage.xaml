@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test3.Manager.ItemDetailPage"
+                Title="{Binding Title}">
+
+    <StackLayout Spacing="20" Padding="15">
+        <Label Text="Номер талона:" FontSize="Medium" />
+        <Label Text="{Binding Text}" FontSize="Small"/>
+        <Label Text="Номер договора:" FontSize="Medium" />
+        <Label Text="{Binding Description}" FontSize="Small"/>
+        <Label Text="Заказчик:" FontSize="Medium" />
+        <Label Text="{Binding Zakaz}" FontSize="Small"/>
+        <Label Text="Код ФККО:" FontSize="Medium" />
+        <Label Text="{Binding KodFKKO}" FontSize="Small"/>
+        <Label Text=" Масса:" FontSize="Medium" />
+        <Label Text="{Binding Massa}" FontSize="Small"/>
+        <Label Text=" Дата:" FontSize="Medium" />
+        <Label Text="{Binding Data}" FontSize="Small"/>
+        <Label Text=" Номер машины:" FontSize="Medium" />
+        <Label Text="{Binding NomerMashini}" FontSize="Small"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:local="clr-namespace:Test3.Manager" 
+             x:DataType="local:ProductViewModel"
+             x:Class="Test3.ProductPage"
+             BackgroundColor="DodgerBlue">
+    <ContentPage.ToolbarItems x:DataType="local:ProductViewModel" >
+        <ToolbarItem Text="Добавить" Command="{Binding AddProductCommand}"/>
+
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout  BackgroundColor="DodgerBlue" >
+            <RefreshView x:DataType="local:ProductViewModel"
+                       Command="{Binding LoadProductCommand}" IsRefreshing="{Binding IsBusy,Mode=OneWay}">
+                <CollectionView
+                  ItemsSource="{Binding ProductInfos}" SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout x:DataType="local:ProductInfo">
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="Удалить" BackgroundColor="Red"  Command="{Binding Source={RelativeSource AncestorType={x:Type local:ProductViewModel}},
+                                                         Path=ProductTappedDelete }" CommandParameter="{Binding .}"/>
+                                            <SwipeItem Text="Закрыть" IsDestructive="True" BackgroundColor="Green"/>
+
+
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+
+                                    <Grid Padding="5">
+                                        <Frame CornerRadius="35" HasShadow="True">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60"></Image>
+                                                <StackLayout>
+                                                    <Label Grid.Column="1" Text="{Binding ProductName} " FontAttributes="Bold"/>
+                                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description} " VerticalOptions="End"/>
+                                                </StackLayout>
+                                                <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                                                    <Image Source="edit.png" Grid.Column="3" WidthRequest="30" HeightRequest="30" VerticalOptions="End"  >
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ProductViewModel}},
+                                                         Path=ProductTappedEdit }" CommandParameter="{Binding .}"/>
+
+
+                                                        </Image.GestureRecognizers>
+
+                                                    </Image>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </SwipeView>
+                            </StackLayout>
+
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.Header>
+                        <StackLayout>
+                            <Label Text=" Талоны" FontSize="Large" TextColor="Gray" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </CollectionView.Header>
+                    <CollectionView.Footer>
+                        <StackLayout>
+                            <Label Text=" Загрузите еще" FontSize="Large" TextColor="Gray" HorizontalOptions="Center"/>
+                            <Button  Command ="{Binding ClearProductCommand}" Text=" Отчистить" FontSize="Large"  BackgroundColor="DodgerBlue" CornerRadius="35" TextColor="Black" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </CollectionView.Footer>
+                </CollectionView>
+            </RefreshView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

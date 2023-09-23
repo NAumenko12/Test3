@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test3.SignUpPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" BackgroundColor="DodgerBlue">
+
+            <Label HorizontalOptions="Center"  Text="Зарегистрируйтесь" FontSize="40" FontFamily="Metropolis" TextColor="Black" Margin="0,50,0,0"/>
+            <Label HorizontalOptions="Center" Text="Добавьте детали для регистрации " FontSize="15" FontFamily="Metropolis" TextColor="Black" Margin="0,10,0,0"/>
+            <Frame CornerRadius="20" BackgroundColor="WhiteSmoke" Margin="0,20,0,0" HasShadow="False" WidthRequest="350" HeightRequest="20">
+                <Entry HorizontalTextAlignment ="Start" Placeholder="Ваш mail" Margin=" 0,-30,0,-30" FontSize="14" TextColor="Black"/>
+            </Frame>
+            <Frame CornerRadius="20" BackgroundColor="WhiteSmoke" Margin="0,20,0,0" HasShadow="False" WidthRequest="350" HeightRequest="20">
+                <Entry HorizontalTextAlignment ="Start" TextColor="Black"  Placeholder="Ваше имя" Margin=" 0,-30,0,-30" FontSize="14"/>
+            </Frame>
+            <Frame CornerRadius="20" BackgroundColor="WhiteSmoke" Margin="0,20,0,0" HasShadow="False" WidthRequest="350" HeightRequest="20">
+                <Entry HorizontalTextAlignment ="Start" Placeholder="Телефон" Margin=" 0,-30,0,-30" FontSize="14" MaxLength="12"/>
+            </Frame>
+            <Frame CornerRadius="20" BackgroundColor="WhiteSmoke" Margin="0,20,0,0" HasShadow="False" WidthRequest="350" HeightRequest="20">
+                <Entry HorizontalTextAlignment ="Start" Placeholder="Пароль" Margin=" 0,-30,0,-30" FontSize="14" IsPassword="True"/>
+            </Frame>
+            <Button Clicked="Home"  Text=" Зарегистрируйтесь"  BackgroundColor="WhiteSmoke" TextColor="Black" WidthRequest="300" HeightRequest="50" Margin="0,30,0,0" HorizontalOptions="Center" CornerRadius="30"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

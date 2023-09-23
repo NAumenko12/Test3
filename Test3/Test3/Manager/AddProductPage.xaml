@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Test3.Manager"
+             x:Class="Test3.Manager.AddProductPage">
+    <ContentPage.BindingContext>
+        <local:AddProductViewModel/>
+
+
+
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="5" Padding="15" BackgroundColor="DodgerBlue">
+
+                <Label Text=" ID" HorizontalOptions="Center"  TextColor="Black" FontSize="Medium" />
+                <Entry Text="{Binding ProductInfo.ProductId,Mode=TwoWay }" FontSize="Medium" IsEnabled="False"/>
+                <Label Text=" Договор" HorizontalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                <Entry Text="{Binding ProductInfo.ProductName,Mode=TwoWay }" FontSize="Medium"/>
+                <Label Text=" Номер договора" HorizontalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                <Editor Text="{Binding ProductInfo.Description,Mode=TwoWay }"  AutoSize="TextChanges" FontSize="Medium" Margin="0"/>
+                <Label Text=" Заказ" HorizontalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                <Entry Text="{Binding ProductInfo.Zakaz,Mode=TwoWay }" FontSize="Medium"/>
+                <Label Text=" Код ФККО" HorizontalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                <Entry Text="{Binding ProductInfo.KodFKKO,Mode=TwoWay }" FontSize="Medium"/>
+                <Label Text="Масса" HorizontalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                <Entry Text="{Binding ProductInfo.Massa,Mode=TwoWay }" FontSize="Medium"/>
+                <Label Text=" Дата"  HorizontalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                <Entry Text="{Binding ProductInfo.Data,Mode=TwoWay }" FontSize="Medium"/>
+                <Label Text=" Номер машины"  HorizontalOptions="Center"  TextColor="Black" FontSize="Medium"/>
+                <Entry Text="{Binding ProductInfo.NomerMashini,Mode=TwoWay }" FontSize="Medium"/>
+                <Label Text=" ImageUrl"  HorizontalOptions="Center" TextColor="Black" FontSize="Medium"/>
+                <Editor Text="{Binding ProductInfo.ImageUrl,Mode=TwoWay }"  AutoSize="TextChanges" FontSize="Medium" Margin="0"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Button Text=" Cancel" Command="{Binding CancelCommand}  " HorizontalOptions="FillAndExpand" TextColor="Black" BackgroundColor="White" CornerRadius="35" ></Button>
+                    <Button Text=" Save"  Command = "{Binding SaveCommand}"  HorizontalOptions="FillAndExpand" TextColor="Black" BackgroundColor="White" CornerRadius="35"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
